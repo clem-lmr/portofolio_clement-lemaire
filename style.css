@@ -177,9 +177,15 @@ body.scrolled nav {
   background: #a37808;
   transform: translateY(-2px);
 }
-.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); text-decoration: none; }
+.btn-ghost {
+  background: rgba(138, 111, 0, 0.08);
+  color: var(--text);
+  border: 1.5px solid rgba(138, 111, 0, 0.55);
+  text-decoration: none;
+}
 .btn-ghost:hover {
   border-color: var(--accent);
+  background: rgba(200, 150, 10, 0.14);
   color: var(--accent);
   transform: translateY(-2px);
 }
@@ -778,13 +784,25 @@ footer span { color: var(--accent2); }
 .form-group { margin-bottom: 1rem; }
 .form-group label { display: block; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
 .form-group input, .form-group textarea {
-  width: 100%; background: transparent; border: none;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0; padding: 0.65rem 0;
+  width: 100%;
+  background: rgba(253, 248, 238, 0.75);
+  border: 1.5px solid rgba(122, 114, 96, 0.45);
+  border-radius: 8px;
+  padding: 0.65rem 0.8rem;
   color: var(--text); font-family: var(--font-mono); font-size: 0.78rem;
-  outline: none; resize: none; transition: border-color 0.2s;
+  outline: none;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
 }
-.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: rgba(122, 114, 96, 0.9);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: var(--accent);
+  background: rgba(253, 248, 238, 0.95);
+  box-shadow: 0 0 0 3px rgba(200, 150, 10, 0.18);
+}
 .form-group textarea { min-height: 110px; }
 
 #successMessage {
